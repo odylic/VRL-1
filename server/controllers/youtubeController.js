@@ -97,24 +97,24 @@ youtubeController.getPlaylistURLs = (req, res, next) => {
   return next();
 };
 
-// const playlistParams = {
-//   // API KEY
-//   key: process.env.YOUTUBE_TOKEN,
-//   part: 'snippet',
-//   playlistId: 'PLCwVd26SHEzRoUMmd8gdgST1SKIRwERdV',
-//   maxResults: 25,
-// };
+const playlistParams = {
+  // API KEY
+  key: process.env.YOUTUBE_TOKEN,
+  part: 'snippet',
+  playlistId: 'PLCwVd26SHEzRoUMmd8gdgST1SKIRwERdV',
+  maxResults: 100,
+};
 
-// google
-//   .youtube('v3')
-//   .playlistItems.list(playlistParams)
-//   .then((response) => {
-//     const {data} = response;
-//     data.items.forEach((item) => {
-//       console.log(
-//         `<a href="https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}">`
-//       );
-//     });
-//   });
+google
+  .youtube('v3')
+  .playlistItems.list(playlistParams)
+  .then((response) => {
+    const {data} = response;
+    data.items.forEach((item) => {
+      console.log(
+        `"https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}",`
+      );
+    });
+  });
 
 module.exports = youtubeController;
