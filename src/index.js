@@ -8,7 +8,7 @@ import 'regenerator-runtime/runtime';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Login />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,10 +1,10 @@
 import React from 'react';
 import '../App.scss';
-import Reactplayer from './Reactplayer'
+import Reactplayer from './Reactplayer';
 import Song from './Song';
-import { SongContext, SongsProvider } from './SongContext'
-import { VideoContext, VideoProvider } from './VideoContext';
-import { ChakraProvider, Box, Button } from "@chakra-ui/react"
+import {SongContext, SongsProvider} from './SongContext';
+import {VideoContext, VideoProvider} from './VideoContext';
+import {ChakraProvider, Box, Button} from '@chakra-ui/react';
 import Playlists from './Playlists';
 // import logo from './spotify.svg';
 function App() {
@@ -29,29 +29,29 @@ function App() {
 
   return (
     <ChakraProvider>
-    <SongsProvider>
-    <div className="wrapper">
-    <div className="grid">
-    <div className="header">header
-    </div>
- 
-    <div className="playlist"> playlist
-    <Playlists/>
-    </div>
-    
+      <SongsProvider>
+        <div className="wrapper">
+          <div className="grid">
+            <div className="header">
+              <h1>Video Request Live</h1>
+            </div>
 
-    <VideoProvider>
-    <Reactplayer />
-    <div className="searchbar">searchbar</div>
-    <div className="alternative-videos">alternative-videos
-    <Song />
-    </div>
-    </VideoProvider>
-    
-    <div className="footer">footer</div>
-    </div>
-    </div>
-    </SongsProvider>
+            <div className="playlists">
+              <Playlists />
+            </div>
+
+            <VideoProvider>
+              <Reactplayer />
+              <div className="searchbar"></div>
+              <div className="songs">
+                <Song />
+              </div>
+            </VideoProvider>
+
+            <div className="footer"></div>
+          </div>
+        </div>
+      </SongsProvider>
     </ChakraProvider>
   );
 }

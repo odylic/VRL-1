@@ -25,16 +25,25 @@
 
 .header {
   border: 1px solid white;
-  color : white;
   // grid-column: 1/13;
   // grid-row: 1/2;
   grid-area: 1/1/2/13;
+
+
+  h1 {
+    color: rgba(0, 255, 0, 0.247);
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+  }
+
 }
 
-.playlist {
+.songs {
   border: 1px solid white;
   grid-area: 2/1/12/5;
-  color : white;
+  color : green;
+  overflow: scroll;
 }
 
 .react-player{
@@ -49,11 +58,18 @@
   color : white;
 }
 
-.alternative-videos{
+.playlists{
   border: 1px solid white;
   grid-area: 8/5/12/13;
-  color : white;
+  color : green;
+  overflow: scroll;
+
+  .playlistItem {
+    width: 100%;
+  }
 }
+
+
 
 .footer {
   border: 1px solid white;
@@ -107,11 +123,11 @@ $login-button-hover-background: rgb(110, 110, 110);
 }
 
 // tablets
-@media (min-width: 480px){
-  .grid{
-    max-width: 900px;
-  }
-}
+// @media (min-width: 480px){
+//   .grid{
+//     max-width: 900px;
+//   }
+// }
 
 // small laptops
 // @media (min-width: 780px) {

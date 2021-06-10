@@ -31,24 +31,37 @@ function Playlists (){
     })
    
      return (
-         <div>
-             {playlists.map(playlist => {
-                
-                return (<div><Button onClick = {(e) => {
-                            e.preventDefault()
-                           fetch(`/spotify/songs/${playlist.id}`)
-                            .then((response) => {
-                                console.log(response)
-                                return response.json()})
-                            .then((data) => {
-                                 console.log(data)
-                                 setSongs(data);
-                                        })
-                }} colorScheme='green' size = "xs" variant="outline"> {playlist.name} </Button>
-                <Spacer /> </div>)
-             })}
-         </div>
-     )
+       <div>
+         <h2>Playlists</h2>
+         {playlists.map((playlist) => {
+           return (
+             <div>
+               <Button
+                 onClick={(e) => {
+                   e.preventDefault();
+                   fetch(`/spotify/songs/${playlist.id}`)
+                     .then((response) => {
+                       console.log(response);
+                       return response.json();
+                     })
+                     .then((data) => {
+                       console.log(data);
+                       setSongs(data);
+                     });
+                 }}
+                 colorScheme="green"
+                 size="xs"
+                 variant="outline"
+               >
+                 {' '}
+                 {playlist.name}{' '}
+               </Button>
+               <Spacer />{' '}
+             </div>
+           );
+         })}
+       </div>
+     );
 
   
 }
